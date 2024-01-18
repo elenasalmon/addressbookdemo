@@ -42,7 +42,7 @@ namespace AddressBookDemo
             string errmess = string.Empty;
             ff.PullFromCsv(FilePath, ref errmess, ref data);
 
-            // dump data to textbox for now
+            // dump no of lines in csv to textbox for now
             TxtTestOutput.Text = data.Count.ToString();
 
             // clear the data grid, and refresh to apply this
@@ -58,7 +58,7 @@ namespace AddressBookDemo
                 {
                     DGAddrBook[i, len].Value = data[len][i].ToString();
                     // All lines in csv file must have same number of columns/items even if empty
-                    // Database should be better for if we want to add more datafields later
+                    // Database should be better for if want to add more datafields later
                 }
 
                 // refresh to show new row immediately

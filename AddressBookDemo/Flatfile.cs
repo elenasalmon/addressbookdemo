@@ -22,20 +22,17 @@ namespace AddressBookDemo
         }
 
         public string csvFilePath = "C:\\Temp\\AddressBookDemo.csv";
+        // if continued with csv route, would want to make this a user input in future
 
         public void PullFromCsv(string filePath, ref string err, ref List<string[]> data)
         {
-            //List<string[] data = new List<string[]>();
             try
             {
                 using (TextFieldParser parser = new TextFieldParser(filePath))
                 {
-                    // Set the parser properties
                     parser.TextFieldType = FieldType.Delimited;
                     parser.SetDelimiters(",");
 
-                    // Read and parse each line, adding it to "data" for output
-                    // Does this work when the csv is empty?
                     while (!parser.EndOfData)
                     {
                         string[] fields = parser.ReadFields();
